@@ -1,0 +1,9 @@
+id,title,description
+DEF-101,Password reset link can be reused,The password reset link still works after it has already been used once so anyone with the old email can reset the password again later
+DEF-102,Double booking on appointment slot,Two patients can book the same appointment slot at the same time and both get a confirmation
+DEF-103,Session stays logged in after logout,After clicking logout the back button returns to the dashboard still logged in with the session active
+DEF-104,Lab results PDF downloads blank,Downloading the lab results PDF produces a blank file with no content for some patients
+DEF-105,Search returns other patients,Typing a partial name in patient search shows patients from other clinics in the results list
+DEF-106,Timezone shifts appointment time,Appointments booked in the evening display one hour earlier after daylight saving changes
+DEF-107,Upload fails for large scans,Uploading a scanned document larger than ten megabytes fails with a generic error and no retry option
+DEF-108,Medication list prints without doses,The printed medication list omits the dose and frequency columns that appear on screen
