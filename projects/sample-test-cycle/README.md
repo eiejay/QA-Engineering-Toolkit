@@ -2,6 +2,11 @@
 
 A complete practice test cycle run against a fictional demo patient portal with two features: patient sign-in and appointment booking. Everything here is a practice exercise on invented software and invented data; the value is the method, shown end to end.
 
+## Files
+
+- test_cases.csv: the ten executed cases as data: preconditions, steps, expected and actual results, status. Importable into a spreadsheet or a test management tool.
+- defect_log.csv: the two defects as data: severity, status, and the case that found each.
+
 ## Test plan summary
 
 - Scope: sign-in, password reset, appointment search and booking, booking cancellation
@@ -10,7 +15,7 @@ A complete practice test cycle run against a fictional demo patient portal with 
 - Entry criteria: demo build available, test accounts seeded
 - Exit criteria: all high priority cases executed, no open critical defects
 
-## Executed cases and results
+## Results at a glance
 
 | ID | Case | Result |
 | --- | --- | --- |
@@ -25,7 +30,7 @@ A complete practice test cycle run against a fictional demo patient portal with 
 | TC-09 | Book an appointment in the past using a hand-edited request | Pass, server rejects |
 | TC-10 | Session times out during booking and resumes safely | Pass |
 
-Result: 8 pass, 2 fail. Both failures are defects, logged below.
+Result: 8 pass, 2 fail. Both failures are defects, logged in defect_log.csv and written out below.
 
 ## Defects found
 

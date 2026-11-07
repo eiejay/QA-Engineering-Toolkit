@@ -1,8 +1,12 @@
 # REST API Test Cases: Sample Appointments API
 
-A documented test set for a fictional appointments API. The endpoints are invented; the testing method is the real content: status codes, payload checks, and the negative cases inexperienced testers skip.
+A documented test set for a fictional appointments API, plus an importable Postman collection for the core requests. The endpoints are invented; the testing method is the real content: status codes, payload checks, and the negative cases inexperienced testers skip.
 
 Base path: /api/v1  |  Auth: bearer token  |  Format: JSON
+
+## Files
+
+- appointments_api.postman_collection.json: Postman v2.1 collection covering API-01 to API-04 and API-07. Import it, set the baseUrl and token variables, and run. The remaining cases are variations on these requests (drop the token, change the patient, double the POST) and are listed below.
 
 ## Endpoints under test
 

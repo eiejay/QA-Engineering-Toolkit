@@ -1,0 +1,89 @@
+{
+  "info": {
+    "name": "Sample Appointments API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Companion collection for the API test cases in this folder. Set baseUrl and token variables before running. All endpoints are fictional."
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://demo-clinic.example.com/api/v1" },
+    { "key": "token", "value": "" },
+    { "key": "appointmentId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "API-01 List appointments for provider and date",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/appointments?provider=prov-100&date=2026-12-01",
+          "host": ["{{baseUrl}}"],
+          "path": ["appointments"],
+          "query": [
+            { "key": "provider", "value": "prov-100" },
+            { "key": "date", "value": "2026-12-01" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "API-02 Create a booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"providerId\": \"prov-100\",\n  \"patientId\": \"pat-500\",\n  \"date\": \"2026-12-01\",\n  \"time\": \"09:30\",\n  \"reason\": \"follow-up\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/appointments",
+          "host": ["{{baseUrl}}"],
+          "path": ["appointments"]
+        }
+      }
+    },
+    {
+      "name": "API-03 Get the created appointment",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/appointments/{{appointmentId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["appointments", "{{appointmentId}}"]
+        }
+      }
+    },
+    {
+      "name": "API-04 Delete the appointment",
+      "request": {
+        "method": "DELETE",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/appointments/{{appointmentId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["appointments", "{{appointmentId}}"]
+        }
+      }
+    },
+    {
+      "name": "API-07 No token returns 401",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/appointments?provider=prov-100&date=2026-12-01",
+          "host": ["{{baseUrl}}"],
+          "path": ["appointments"],
+          "query": [
+            { "key": "provider", "value": "prov-100" },
+            { "key": "date", "value": "2026-12-01" }
+          ]
+        }
+      }
+    }
+  ]
+}

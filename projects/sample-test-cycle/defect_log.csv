@@ -1,0 +1,3 @@
+Defect ID,Title,Severity,Status,Found in case,Summary,Expected,Actual
+DEF-001,Used password reset link works a second time,High,Open,TC-04,"After a reset link is used to set a new password, the same link opens the reset form again within its validity window and accepts a second password change","Reset links are single use; a used link is dead","Link remains usable until expiry"
+DEF-002,Double booking of the same slot from two sessions,High,Open,TC-07,"Two sessions confirm the same open slot within seconds and both receive a success","One booking exists; the second confirmation fails with a clear message","Two bookings exist for one slot; the availability check and the booking write are not atomic"
