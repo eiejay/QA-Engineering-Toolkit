@@ -2,6 +2,21 @@
 
 A practical checklist for testing registration, intake, and appointment forms against WCAG 2.2 AA, the standard healthcare organizations are asked to meet. Forms are where accessibility failures hurt most: a patient who cannot complete intake cannot get care.
 
+## Files
+
+- accessibility_checklist.csv: this checklist as data, with a WCAG reference and a how-to-test note per item, plus Result and Notes columns to fill during a pass.
+- contrast_ratio.py: a small calculator for the contrast checks. Give it a foreground and a background hex color; it returns the WCAG contrast ratio and the AA and AAA verdicts.
+
+Run it:
+
+    python3 contrast_ratio.py 767676 FFFFFF
+
+Verified output on known pairs:
+
+    #000000 on #FFFFFF: 21.00 to 1 (the maximum possible ratio)
+    #767676 on #FFFFFF: 4.54 to 1, passes AA for normal text
+    #949494 on #FFFFFF: 3.03 to 1, fails AA for normal text, passes for large text only
+
 ## Keyboard
 
 - [ ] Every control reachable by Tab, in a visual order
@@ -28,7 +43,7 @@ A practical checklist for testing registration, intake, and appointment forms ag
 
 ## Visual and motor
 
-- [ ] Text contrast at least 4.5 to 1, large text 3 to 1
+- [ ] Text contrast at least 4.5 to 1, large text 3 to 1 (verify with contrast_ratio.py)
 - [ ] Page usable at 200 percent zoom with no horizontal scrolling
 - [ ] Touch targets at least 24 by 24 CSS pixels, 44 preferred
 - [ ] No information carried by color alone (slot status, error state)
